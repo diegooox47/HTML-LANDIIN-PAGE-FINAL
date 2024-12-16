@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #faf6f6;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #555;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery-item {
+            width: 200px;
+            height: 150px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .carousel img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .carousel .close, .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .carousel .close {
+            top: 20px;
+            right: 20px;
+            transform: none;
+        }
+
+        .carousel .prev {
+            left: 20px;
+        }
+
+        .carousel .next {
+            right: 20px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h1 {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 0 0 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mi primera página</h1>
+</header>
+
+<nav>
+    <a href="#cristiano">Cristiano Ronaldo</a>
+    <a href="#horarios">Horarios y Módulos</a>
+    <a href="#galeria">Galería de Imágenes</a>
+    <a href="#formulario">Formulario</a>
+</nav>
+
+<main>
+    <!-- Sección Cristiano Ronaldo -->
+    <section id="cristiano">
+        <h2>Cristiano Ronaldo</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" style="display: block; margin: 0 auto; max-width: 200px; border-radius: 50%;">
+        <p><b>Cristiano Ronaldo</b> dos Santos Aveiro nació el 5 de febrero de 1985 en Madeira, Portugal. Es considerado uno de los mejores jugadores de fútbol de todos los tiempos. Con una trayectoria increíble, ha jugado en clubes como el <b>Manchester United</b>, el <b>Real Madrid</b>, la <b>Juventus</b> y el <b>Al-Nassr</b>. Además, es el máximo goleador en la historia de la Liga de Campeones.</p>
+        <h3>Logros</h3>
+        <ul>
+            <li>5 Balones de Oro.</li>
+            <li>Máximo goleador en la historia del fútbol profesional.</li>
+            <li>Campeón de Europa con Portugal (2016).</li>
+            <li>Más de 30 títulos ganados entre clubes y selección.</li>
+        </ul>
+    </section>
+
+    <!-- Sección Horarios y Módulos -->
+    <section id="horarios">
+        <h2>Horarios y Módulos</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: center;">
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15:00 - 16:00</td>
+                    <td>SDA1-0484-Ebd<br>CF Daniel Román</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>SDA1-0484-Ebd<br>CF Daniel Román</td>
+                </tr>
+                <tr>
+                    <td>16:00 - 17:00</td>
+                    <td>SDA1-0373-Di-M4<br>CF Salva Jimenez</td>
+                    <td>SDA1-0483-Esis-M1<br>CF Yolanda Salcedo</td>
+                    <td></td>
+                    <td></td>
+                    <td>SDA1-0484-Ebd<br>CF Ismael Sánchez</td>
+                </tr>
+                <tr>
+                    <td>17:00 - 18:00</td>
+                    <td>SDA1-0373-Di-M4<br>CF Salva Jimenez</td>
+                    <td>SDA1-0483-Esis-M1<br>CF Yolanda Salcedo</td>
+                    <td>SDA1-0373-Di-M4<br>CF Salva Jimenez</td>
+                    <td>SDA1-0484-Ebd<br>CF Daniel Román</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                </tr>
+                <tr>
+                    <td>18:20 - 19:20</td>
+                    <td>SDA1-0483-Esis-M1<br>CF Yolanda Salcedo</td>
+                    <td>SDA1-0179-AN<br>CF Pilar Herrero</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                </tr>
+                <tr>
+                    <td>19:20 - 20:20</td>
+                    <td>SDA1-0483-Esis-M1<br>CF Yolanda Salcedo</td>
+                    <td>SDA1-0179-AN<br>CF Pilar Herrero</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                    <td>SDA1-0485-d-M3<br>CF Ariadna Rius</td>
+                    <td>SDA1-1709-IPO1<br>CF Miriam Quintana</td>
+                </tr>
+                <tr>
+                    <td>20:20 - 21:20</td>
+                    <td></td>
+                    <td>SDA1-0484-Ebd<br>CF Daniel Román</td>
+                    <td>SDA1-1709-IPO1<br>CF Miriam Quintana</td>
+                    <td>SDA1-0483-Esis-M1<br>CF Yolanda Salcedo</td>
+                    <td>SDA1-1709-IPO1<br>CF Miriam Quintana</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sección Galería de Imágenes -->
+    <section id="galeria">
+        <h2>Galería de Imágenes</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="baixa.jpeg" alt="Fútbol">
+                <span>Fútbol</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa2.jpeg" alt="Coches">
+                <span>Coches</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa3.jpeg" alt="Gimnasio">
+                <span>Gimnasio</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa4.jpeg" alt="Senderismo">
+                <span>Senderismo</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa5.jpeg" alt="Natación">
+                <span>Natación</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa6.jpeg" alt="Pádel">
+                <span>Pádel</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa7.jpeg" alt="Videojuegos">
+                <span>Videojuegos</span>
+            </div>
+            <div class="gallery-item">
+                <img src="baixa8.jpeg" alt="Viajar">
+                <span>Viajar</span>
+            </div>
+        </div>
+        
+        <div class="carousel">
+            <span class="close">&times;</span>
+            <span class="prev">&#8249;</span>
+            <img src="" alt="Carrusel Imagen">
+            <span class="next">&#8250;</span>
+        </div>
+    </section>
+
+    <!-- Sección Formulario -->
+    <section id="formulario">
+        <h2>Formulario</h2>
+        <form class="form-container" method="POST" action="https://alumnat.cat/form" enctype="multipart/form-data">
+            <h1>Nou Treballador</h1>
+
+            <div>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Escriu el teu nom" required>
+            </div>
+
+            <div>
+                <label for="cognoms">Cognoms</label>
+                <input type="text" id="cognoms" name="cognoms" placeholder="Escriu els teus cognoms" required>
+            </div>
+
+            <div>
+                <label for="edat">Edat</label>
+                <input type="number" id="edat" name="edat" placeholder="Edat" min="18" required>
+            </div>
+
+            <div>
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" name="dni" placeholder="12345678X" pattern="\d{8}[A-Z]" required>
+            </div>
+
+            <div>
+                <label for="color">Color preferit</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <div class="full-width">
+                <label for="email">Correu electrònic</label>
+                <input type="email" id="email" name="email" placeholder="email@exemple.com" required>
+            </div>
+
+            <div class="full-width">
+                <label for="estudis">Estudis</label>
+                <select id="estudis" name="estudis" required>
+                    <option value="">Selecciona una opció</option>
+                    <option value="primaris">Primaris</option>
+                    <option value="secundaris">Secundaris</option>
+                    <option value="universitaris">Universitaris</option>
+                    <option value="altres">Altres</option>
+                </select>
+            </div>
+
+            <div class="full-width">
+                <label>Sexe</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sexe" value="home" required> Home</label>
+                    <label><input type="radio" name="sexe" value="dona"> Dona</label>
+                    <label><input type="radio" name="sexe" value="altre"> Altre</label>
+                </div>
+            </div>
+
+            <div class="full-width">
+                <label for="explicacio">Explicació</label>
+                <textarea id="explicacio" name="explicacio" rows="4" placeholder="Escriu una breu descripció sobre tu"></textarea>
+            </div>
+
+            <div class="full-width checkbox-container">
+                <input type="checkbox" id="privacitat" name="privacitat" required>
+                <label for="privacitat">Accepto la política de privacitat</label>
+            </div>
+
+            <div class="full-width">
+                <label for="foto">Fotografia</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+
+            <div class="full-width">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Mi primera Página. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const carousel = document.querySelector('.carousel');
+    const carouselImage = carousel.querySelector('img');
+    const closeButton = carousel.querySelector('.close');
+    const prevButton = carousel.querySelector('.prev');
+    const nextButton = carousel.querySelector('.next');
+    const images = [
+        "baixa.jpeg",
+        "baixa2.jpeg",
+        "baixa3.jpeg",
+        "baixa4.jpeg",
+        "baixa5.jpeg",
+        "baixa6.jpeg",
+        "baixa7.jpeg",
+        "baixa8.jpeg"
+    ];
+    let currentIndex = 0
